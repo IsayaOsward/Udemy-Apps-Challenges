@@ -1,26 +1,47 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    ));
+void main()=>runApp(
+  MaterialApp(
+    home: HomePage(),
+  )
+);
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "I Am Poor",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      backgroundColor: Colors.teal,
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              width: 100,
+              color: Colors.red,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.yellow,
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.green,
+                )
+              ],
+            ),
+            Container(
+              width: 100,
+              color: Colors.blue,
+            ),
+          ],
         ),
-        centerTitle: true,
-        backgroundColor: Colors.purple,
-      ),
-      body: Center(
-        child: Image.asset("images/coal.png"),
       ),
     );
   }
